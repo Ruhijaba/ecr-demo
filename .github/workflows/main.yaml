@@ -26,9 +26,9 @@ jobs:
     - name: Build, Tag, and Push the Image to Amazon ECR
       id: build-image
       env:
-        export ECR_REGISTRY="***.dkr.ecr.ap-south-1.amazonaws.com"
-        export ECR_REPOSITORY="ecr-demo"
-        export IMAGE_TAG="latest"
+        ECR_REGISTRY: "***.dkr.ecr.ap-south-1.amazonaws.com"
+        ECR_REPOSITORY: "ecr-demo"
+        IMAGE_TAG: "latest"
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
